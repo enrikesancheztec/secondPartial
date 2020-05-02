@@ -8,8 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
-
+class MasterViewController: UITableViewController, BookDelegate {
     var detailViewController: DetailViewController? = nil
     let service = BookService()
     var bookList : [Book] = []
@@ -47,10 +46,9 @@ class MasterViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let book = bookList[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                
-                print("selected book " + book.title)
-                
+
                 controller.detailItem = book
+                controller.delegate = self
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 detailViewController = controller
@@ -74,5 +72,23 @@ class MasterViewController: UITableViewController {
 
         return cell
     }
-}
+    
+    func newBook(_ controller: AnyObject, newBook: Book) {
+        // TODO
+    }
+    
+    func editBook(_ controller: AnyObject, editBook: Book) {
+        // TODO
+    }
+    
+    func deleteBook(_ controller: AnyObject) {
+        if let row = tableView.indexPathForSelectedRow?.row {
+            let book = bookList[row]
+            service.removeById(book.bookId) { [unowned self] in
+                self.refresh()
+            }
+        }
+        
+        navigationController?.popToRootViewController(animated: true)
+    }}
 

@@ -52,7 +52,42 @@ class BookService : NSObject {
         }
         task.resume()
     }
+    
+    func removeById(_ bookId : Int, handler: @escaping () -> Void) {
+        let endpoint: String = "https://booksappsample.herokuapp.com/books/" + String(bookId)
+        
+        guard let url = URL(string: endpoint) else {
+            NSLog("Error creating URL %@", endpoint)
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let task = session.dataTask(with: urlRequest) {
+            (data, response, error) in
+            guard error == nil else {
+                print("Error calling URL")
+                print(error!)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse{
+                if httpResponse.statusCode == 200 {
+                    handler()
+                } else {
+                    print("Invalid Status Code")
+                    print(httpResponse.statusCode)
+                }
+            }
+            
 
+        }
+        task.resume()
+    }
+    
     private func buildBookFromAPIResponse(_ response: [String: Any]) -> Book {
         let book = Book()
         
