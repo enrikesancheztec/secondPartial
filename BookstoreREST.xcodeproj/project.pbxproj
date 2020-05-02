@@ -43,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00831414245DB41C00DD4149 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				00C0AA0B245CC05200D205EA /* MasterViewController.swift */,
+				00C0AA0D245CC05200D205EA /* DetailViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		00831415245DB44100DD4149 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				00C0AA07245CC05200D205EA /* AppDelegate.swift */,
+				00C0AA09245CC05200D205EA /* SceneDelegate.swift */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
 		00C0A9FB245CC05200D205EA = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +80,10 @@
 		00C0AA06245CC05200D205EA /* BookstoreREST */ = {
 			isa = PBXGroup;
 			children = (
+				00831415245DB44100DD4149 /* delegate */,
+				00831414245DB41C00DD4149 /* controller */,
 				00C0AA20245CC35000D205EA /* service */,
 				00C0AA1D245CC14600D205EA /* vo */,
-				00C0AA07245CC05200D205EA /* AppDelegate.swift */,
-				00C0AA09245CC05200D205EA /* SceneDelegate.swift */,
-				00C0AA0B245CC05200D205EA /* MasterViewController.swift */,
-				00C0AA0D245CC05200D205EA /* DetailViewController.swift */,
 				00C0AA0F245CC05200D205EA /* Main.storyboard */,
 				00C0AA12245CC05500D205EA /* Assets.xcassets */,
 				00C0AA14245CC05500D205EA /* LaunchScreen.storyboard */,
