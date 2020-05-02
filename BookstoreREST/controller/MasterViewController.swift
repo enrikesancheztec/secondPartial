@@ -69,6 +69,7 @@ class MasterViewController: UITableViewController, BookDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let book = bookList[indexPath.row]
         cell.textLabel!.text = book.title
+        cell.accessoryType = .detailDisclosureButton
 
         return cell
     }
