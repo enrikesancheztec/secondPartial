@@ -52,6 +52,18 @@ class MasterViewController: UITableViewController, BookDelegate {
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 detailViewController = controller
+                
+                service.validateById(book.bookId) { [unowned self]
+                    (valid) in
+                    print("valid " + String(valid))
+                    
+                    if (!valid) {
+                        DispatchQueue.main.async {                        self.detailViewController?.view.backgroundColor = UIColor.red
+                        }
+                        
+                        self.refresh()
+                    }
+                }
             }
         }
     }

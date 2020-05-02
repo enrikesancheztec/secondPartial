@@ -88,6 +88,38 @@ class BookService : NSObject {
         task.resume()
     }
     
+    func validateById(_ bookId : Int, handler: @escaping (Bool) -> Void) {
+        let endpoint: String = "https://booksappsample.herokuapp.com/books/" + String(bookId)
+        
+        guard let url = URL(string: endpoint) else {
+            NSLog("Error creating URL %@", endpoint)
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let task = session.dataTask(with: urlRequest) {
+            (data, response, error) in
+            guard error == nil else {
+                print("Error calling URL")
+                print(error!)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse{
+                if httpResponse.statusCode == 200 {
+                    handler(true)
+                } else {
+                    handler(false)
+                }
+            }
+            
+
+        }
+        task.resume()
+    }
     private func buildBookFromAPIResponse(_ response: [String: Any]) -> Book {
         let book = Book()
         
