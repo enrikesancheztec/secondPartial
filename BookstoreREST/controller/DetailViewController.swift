@@ -31,7 +31,6 @@ class DetailViewController: UIViewController {
     var detailItem: Book? {
         didSet {
             // Update the view.
-            configureView()
         }
     }
 
