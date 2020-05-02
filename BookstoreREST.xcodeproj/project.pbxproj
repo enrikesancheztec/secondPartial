@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00831417245DBB6600DD4149 /* BookDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00831416245DBB6600DD4149 /* BookDelegate.swift */; };
 		00C0AA08245CC05200D205EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0AA07245CC05200D205EA /* AppDelegate.swift */; };
 		00C0AA0A245CC05200D205EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0AA09245CC05200D205EA /* SceneDelegate.swift */; };
 		00C0AA0C245CC05200D205EA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0AA0B245CC05200D205EA /* MasterViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00831416245DBB6600DD4149 /* BookDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDelegate.swift; sourceTree = "<group>"; };
 		00C0AA04245CC05200D205EA /* BookstoreREST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookstoreREST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C0AA07245CC05200D205EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00C0AA09245CC05200D205EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				00C0AA07245CC05200D205EA /* AppDelegate.swift */,
 				00C0AA09245CC05200D205EA /* SceneDelegate.swift */,
+				00831416245DBB6600DD4149 /* BookDelegate.swift */,
 			);
 			path = delegate;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				00C0AA08245CC05200D205EA /* AppDelegate.swift in Sources */,
 				00C0AA0A245CC05200D205EA /* SceneDelegate.swift in Sources */,
 				00C0AA22245CC37800D205EA /* BookService.swift in Sources */,
+				00831417245DBB6600DD4149 /* BookDelegate.swift in Sources */,
 				00C0AA0C245CC05200D205EA /* MasterViewController.swift in Sources */,
 				00C0AA1F245CC16D00D205EA /* Book.swift in Sources */,
 				00C0AA0E245CC05200D205EA /* DetailViewController.swift in Sources */,
