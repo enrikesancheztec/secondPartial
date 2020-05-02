@@ -47,6 +47,9 @@ class MasterViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let book = bookList[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                
+                print("selected book " + book.title)
+                
                 controller.detailItem = book
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

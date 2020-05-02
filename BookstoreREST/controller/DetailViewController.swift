@@ -9,16 +9,16 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
+        if let book = detailItem {
+            titleLabel.text = book.title
+            authorLabel.text = book.author
+            descriptionTextView.text = book.description
         }
     }
 

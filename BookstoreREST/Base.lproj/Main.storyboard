@@ -84,6 +84,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="0Na-mT-Ly6" id="Kco-bb-GQ1"/>
+                        <outlet property="descriptionTextView" destination="1Kn-yz-liS" id="odY-h7-0Z1"/>
+                        <outlet property="titleLabel" destination="f04-9h-Llr" id="ms2-jt-85G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
